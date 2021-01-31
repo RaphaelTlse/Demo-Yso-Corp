@@ -1,0 +1,101 @@
+{
+    "m_SelectedDeviceId": "XPH0219B11001576",
+    "m_SelectedPackage": {
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
+        "exited": false
+    },
+    "m_SelectedPriority": 0,
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "XPH0219B11001576",
+            "name": "com.huawei.android.launcher",
+            "processId": 3174,
+            "exited": false
+        },
+        {
+            "deviceId": "XPH0219B11001576",
+            "name": "com.DefaultCompany.Demo",
+            "processId": 19025,
+            "exited": true
+        },
+        {
+            "deviceId": "XPH0219B11001576",
+            "name": "com.DefaultCompany.Demo",
+            "processId": 21485,
+            "exited": true
+        },
+        {
+            "deviceId": "XPH0219B11001576",
+            "name": "com.DefaultCompany.Demo",
+            "processId": 24668,
+            "exited": true
+        },
+        {
+            "deviceId": "XPH0219B11001576",
+            "name": "com.DefaultCompany.Demo",
+            "processId": 27182,
+            "exited": true
+        },
+        {
+            "deviceId": "XPH0219B11001576",
+            "name": "com.DefaultCompany.Demo",
+            "processId": 29691,
+            "exited": true
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 1,
+        "Behavior": 1
+    },
+    "m_Filter": "",
+    "m_FilterIsRegularExpression": false,
+    "m_SymbolPaths": []
+}
