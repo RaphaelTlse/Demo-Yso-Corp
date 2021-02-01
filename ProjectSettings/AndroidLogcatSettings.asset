@@ -1,10 +1,10 @@
 {
     "m_SelectedDeviceId": "XPH0219B11001576",
     "m_SelectedPackage": {
-        "deviceId": "XPH0219B11001576",
-        "name": "com.DefaultCompany.Demo",
-        "processId": 15837,
-        "exited": true
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
+        "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
@@ -17,43 +17,37 @@
         {
             "deviceId": "XPH0219B11001576",
             "name": "com.DefaultCompany.Demo",
-            "processId": 8381,
+            "processId": 17113,
             "exited": true
         },
         {
             "deviceId": "XPH0219B11001576",
             "name": "com.DefaultCompany.Demo",
-            "processId": 9885,
+            "processId": 19522,
             "exited": true
         },
         {
             "deviceId": "XPH0219B11001576",
             "name": "com.DefaultCompany.Demo",
-            "processId": 10494,
+            "processId": 23120,
             "exited": true
         },
         {
             "deviceId": "XPH0219B11001576",
             "name": "com.DefaultCompany.Demo",
-            "processId": 12972,
+            "processId": 24876,
             "exited": true
         },
         {
             "deviceId": "XPH0219B11001576",
-            "name": "com.DefaultCompany.Demo",
-            "processId": 13837,
-            "exited": true
+            "name": "com.google.android.apps.messaging",
+            "processId": 31913,
+            "exited": false
         },
         {
             "deviceId": "XPH0219B11001576",
             "name": "com.DefaultCompany.Demo",
-            "processId": 14850,
-            "exited": true
-        },
-        {
-            "deviceId": "XPH0219B11001576",
-            "name": "com.DefaultCompany.Demo",
-            "processId": 15837,
+            "processId": 29753,
             "exited": true
         }
     ],

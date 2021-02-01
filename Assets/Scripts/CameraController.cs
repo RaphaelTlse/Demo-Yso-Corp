@@ -25,8 +25,8 @@ public class CameraController : Singleton<CameraController>
     private GameObject _targetGameObject;
     private float _smoothTransition;
 
-    Vector3 _initPos;
-    Quaternion _initRot;
+    public Vector3 _initPos;
+    public Quaternion _initRot;
 
     void Start()
     {
@@ -67,16 +67,9 @@ public class CameraController : Singleton<CameraController>
         int levelHeight = GameController.Instance.levelHeight;
         float fixedNextLevelPosY = _initPos.y + levelHeight;
 
-        /*for (float i = 0; i < 1; i += Time.deltaTime)
-        {
-            Debug.Log("complétion : " + (levelHeight - fixedNextLevelPosY + transform.position.y) / levelHeight);
-            yield return null;
-        }
-        Debug.Log("mdr fini");*/
         while (SkyboxController.Instance.skyboxes[fixedIndex].GetFloat("_Blend") < 1)
         {
             SkyboxController.Instance.skyboxes[fixedIndex].SetFloat("_Blend", (levelHeight - fixedNextLevelPosY + transform.position.y) / levelHeight);
-            //Debug.Log(SkyboxController.Instance.skyboxes[fixedIndex].GetFloat("_Blend"));
             yield return new WaitForSeconds(0.01f);
         }
     }
@@ -90,38 +83,23 @@ public class CameraController : Singleton<CameraController>
 
     void Update()
     {
-        //Debug.Log("En ce moment ça : " + _currentState);
-        //        Debug.Log("current state : " + _currentState);
-        //        Debug.Log("previous state : " + _previousState);
         if (_currentState == CameraState.Follow)
         {
 
             Vector3 targetDirection = new Vector3(_target.position.x, GameController.Instance.levelHeight * GameController.Instance.level + _cameraInitialHeight, _target.position.z) - transform.position;
-            //Debug.Log(targetDirection);
             if (transform.position.z + 6f < _target.position.z && transform.position.z + 6f + _distanceMaxCameraWall < (GameController.Instance.wallDistance + ((GameController.Instance.level + 1) / 2) * 3))
             {
-                //Debug.Log("maxdist" + _distanceMaxCameraWall);
-                //Debug.Log("posz" + transform.position.z);
-                //Debug.Log("walldist" + GameController.Instance.wallDistance);
-                //Debug.Log("Target name : " + _target.name);
                 transform.position = Vector3.MoveTowards(transform.position, _target.position, _target.GetComponent<Rigidbody>().velocity.z * Time.fixedDeltaTime);
                 Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, _followRotateSpeed * (GameController.Instance.level + 1), 0.0f);
                 transform.rotation = Quaternion.LookRotation(newDirection);
             }
-            /*else if (transform.position.z + _cameraInitialHeight > _target.position.z)
-            {
-                transform.position = _initPos;
-                transform.rotation = _initRot;
-            }*/
         }
         else if (_currentState == CameraState.Transition)
         {
-            //Debug.Log("_initPos.y - transform.position.y :" + _initPos.y + " - " + transform.position.y + ". Comparé à levelHeight / 2 : " + GameController.Instance.levelHeight / 2);
             if (_initPos.y - transform.position.y > GameController.Instance.levelHeight / 3f)
                 _smoothTransition += 0.005f * Time.deltaTime;
             else if (_smoothTransition > 2 * _transitionMoveSpeed)
             {
-                //Debug.Log("ça baisse, movspeed : " + _smoothTransition);
                 _smoothTransition -= 0.01f * Time.deltaTime;
             }
             else
@@ -142,6 +120,5 @@ public class CameraController : Singleton<CameraController>
             transform.position = Vector3.MoveTowards(transform.position, _initPos, _resetMoveSpeed * (transform.position.z - _initPos.z));
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        //Debug.Log(_currentState);
     }
 }

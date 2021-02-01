@@ -2275,7 +2275,7 @@ PrefabInstance:
     - target: {fileID: 6411056498284756025, guid: 172123d3101e5244bb95775ba543cf3d,
         type: 3}
       propertyPath: _followRotateSpeed
-      value: 0.0005
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 6411056498284756025, guid: 172123d3101e5244bb95775ba543cf3d,
         type: 3}
@@ -2285,7 +2285,7 @@ PrefabInstance:
     - target: {fileID: 6411056498284756025, guid: 172123d3101e5244bb95775ba543cf3d,
         type: 3}
       propertyPath: _distanceMaxCameraWall
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 172123d3101e5244bb95775ba543cf3d, type: 3}
@@ -2406,6 +2406,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1007954988817707692, guid: b6a70fd55ac1f54499f9ea8356ac57f8,
         type: 3}
+      propertyPath: _spaceBrick
+      value: 
+      objectReference: {fileID: 1057421396996692961, guid: 83937a1b3d4fac1408fd72414cf6cd20,
+        type: 3}
+    - target: {fileID: 1007954988817707692, guid: b6a70fd55ac1f54499f9ea8356ac57f8,
+        type: 3}
       propertyPath: _flyingSocle
       value: 
       objectReference: {fileID: 4644148802160274706, guid: 7400f32f4bdc3b44888c0a371062debc,
@@ -2457,6 +2463,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1007954988817707692, guid: b6a70fd55ac1f54499f9ea8356ac57f8,
         type: 3}
+      propertyPath: finalWallHeight
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007954988817707692, guid: b6a70fd55ac1f54499f9ea8356ac57f8,
+        type: 3}
       propertyPath: _miniGoldenBrick
       value: 
       objectReference: {fileID: 5153650066289419036, guid: 14c465febc876074295722b9a5ac3718,
@@ -2472,6 +2483,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 584516002213070868, guid: 4a9a38a07a5800649a0c1c6aa18974b8,
         type: 3}
+    - target: {fileID: 1007954988817707692, guid: b6a70fd55ac1f54499f9ea8356ac57f8,
+        type: 3}
+      propertyPath: finalWallDistance
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 1007954988817707692, guid: b6a70fd55ac1f54499f9ea8356ac57f8,
         type: 3}
       propertyPath: _miniExplosiveBrick

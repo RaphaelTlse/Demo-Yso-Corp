@@ -20,9 +20,7 @@ public class SpawnerManager : MonoBehaviour
     {
         if (GameController.Instance.frenzyMode == false)
         {
-            Debug.Log("length :" + _normalObjects.Length);
             _currentObject = _normalObjects[Random.Range(0, _normalObjects.Length)];
-            //objectHeight = _currentObject.GetComponent<Renderer>().bounds.size.y;
             tmp = Instantiate(_currentObject, new Vector3(0, transform.position.y + transform.localScale.y + (1.0f / 2) - 1f, 1), Quaternion.identity);
             tmp.transform.rotation = Quaternion.Euler(0, 180, 0);
             tmp.GetComponentInChildren<Renderer>().material = _materials[Random.Range(0, _materials.Length)];
