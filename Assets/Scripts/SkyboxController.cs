@@ -11,8 +11,6 @@ public class SkyboxController : Singleton<SkyboxController>
 
     private void Start()
     {
-        //Debug.Log(skyboxes.Length);
-        //Debug.Log("nom :" + skyboxes[0]);
         resetSkybox();
     }
 
@@ -26,7 +24,6 @@ public class SkyboxController : Singleton<SkyboxController>
     public void nextSkybox()
     {
         index++;
-        //Debug.Log(index);
         RenderSettings.skybox = skyboxes[index];
         skyboxes[index].SetFloat("_Blend", 0);
     }

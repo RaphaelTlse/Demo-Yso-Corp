@@ -14,7 +14,6 @@ public class Destroy : MonoBehaviour
             if (gameObject != null)
             {
                 c = gameObject.GetComponent<Renderer>().material.color;
-                //Debug.Log("Fading, a = " + c.a);
                 c.a = ft;
                 gameObject.GetComponent<Renderer>().material.color = c;
             }
@@ -27,16 +26,9 @@ public class Destroy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Brick")
         {
-            //Debug.Log(collision.gameObject.name);
             GameController.Instance.destroyedBricks++;
             _renderer = collision.gameObject.GetComponent<Renderer>();
-            //Debug.Log("Trying to fade, a = " + _renderer.material.color.a);
             StartCoroutine(Fade(collision.gameObject));
-
-            //Debug.Log("Allo1");
-            //
-            //Debug.Log("Allo3");
-            //Debug.Log("Add points");
         }
     }
 }
