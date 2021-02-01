@@ -6,7 +6,7 @@ public class DestroyInstantly : MonoBehaviour
 {
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Yikes");
+        //Debug.Log("Yikes");
         if (collision.gameObject.tag == "Brick")
         {
             GameController.Instance.destroyedBricks++;

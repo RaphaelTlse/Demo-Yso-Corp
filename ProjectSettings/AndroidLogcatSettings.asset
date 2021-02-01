@@ -1,10 +1,10 @@
 {
     "m_SelectedDeviceId": "XPH0219B11001576",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
-        "exited": false
+        "deviceId": "XPH0219B11001576",
+        "name": "com.DefaultCompany.Demo",
+        "processId": 15837,
+        "exited": true
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
@@ -17,31 +17,43 @@
         {
             "deviceId": "XPH0219B11001576",
             "name": "com.DefaultCompany.Demo",
-            "processId": 19025,
+            "processId": 8381,
             "exited": true
         },
         {
             "deviceId": "XPH0219B11001576",
             "name": "com.DefaultCompany.Demo",
-            "processId": 21485,
+            "processId": 9885,
             "exited": true
         },
         {
             "deviceId": "XPH0219B11001576",
             "name": "com.DefaultCompany.Demo",
-            "processId": 24668,
+            "processId": 10494,
             "exited": true
         },
         {
             "deviceId": "XPH0219B11001576",
             "name": "com.DefaultCompany.Demo",
-            "processId": 27182,
+            "processId": 12972,
             "exited": true
         },
         {
             "deviceId": "XPH0219B11001576",
             "name": "com.DefaultCompany.Demo",
-            "processId": 29691,
+            "processId": 13837,
+            "exited": true
+        },
+        {
+            "deviceId": "XPH0219B11001576",
+            "name": "com.DefaultCompany.Demo",
+            "processId": 14850,
+            "exited": true
+        },
+        {
+            "deviceId": "XPH0219B11001576",
+            "name": "com.DefaultCompany.Demo",
+            "processId": 15837,
             "exited": true
         }
     ],

@@ -7,13 +7,12 @@ public class SkyboxController : Singleton<SkyboxController>
     [SerializeField]
     public Material[] skyboxes;
 
-    public float _blendSpeed = 10000000f;
     public int index = 0;
 
     private void Start()
     {
-        Debug.Log(skyboxes.Length);
-        Debug.Log("nom :" + skyboxes[0]);
+        //Debug.Log(skyboxes.Length);
+        //Debug.Log("nom :" + skyboxes[0]);
         resetSkybox();
     }
 
@@ -27,7 +26,7 @@ public class SkyboxController : Singleton<SkyboxController>
     public void nextSkybox()
     {
         index++;
-        Debug.Log(index);
+        //Debug.Log(index);
         RenderSettings.skybox = skyboxes[index];
         skyboxes[index].SetFloat("_Blend", 0);
     }

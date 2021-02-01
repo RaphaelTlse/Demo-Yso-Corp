@@ -17,6 +17,7 @@ public class Launch : MonoBehaviour
         //Debug.Log(distance);
         if (distance > 150)
         {
+            gameObject.GetComponent<Animator>().runtimeAnimatorController = null;
             yield return new WaitForSeconds(time);
             GameController.Instance._currentSpawner.GetComponent<SpawnerManager>().spawnObject();
             CameraController.Instance.SetCurrentState(CameraController.CameraState.Fixed);
@@ -91,7 +92,7 @@ public class Launch : MonoBehaviour
                 rb.isKinematic = false;
                 //            Debug.Log("Throw Force xy : " + throwForceInXandY + ", Throw Force z : " + throwForceInZ + ", Time Interval : " + timeInterval);
                 //rb.AddForce(0, 1500, 3000);
-                rb.AddForce(0-direction.x * throwForce * rb.mass / 750, -direction.y * throwForce * rb.mass / 1000, throwForce * rb.mass * 2f);
+                rb.AddForce(0-direction.x * throwForce * rb.mass / 750, -direction.y * throwForce * rb.mass / 800, throwForce * rb.mass * 2f);
 
                 StartCoroutine(ExecuteAfterTime(2.5f));
                 pressed = false;

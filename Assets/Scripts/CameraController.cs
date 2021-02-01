@@ -76,7 +76,7 @@ public class CameraController : Singleton<CameraController>
         while (SkyboxController.Instance.skyboxes[fixedIndex].GetFloat("_Blend") < 1)
         {
             SkyboxController.Instance.skyboxes[fixedIndex].SetFloat("_Blend", (levelHeight - fixedNextLevelPosY + transform.position.y) / levelHeight);
-            Debug.Log(SkyboxController.Instance.skyboxes[fixedIndex].GetFloat("_Blend"));
+            //Debug.Log(SkyboxController.Instance.skyboxes[fixedIndex].GetFloat("_Blend"));
             yield return new WaitForSeconds(0.01f);
         }
     }
@@ -129,7 +129,7 @@ public class CameraController : Singleton<CameraController>
                 _smoothTransition = 2 * _transitionMoveSpeed;
             }
             transform.position = Vector3.MoveTowards(transform.position, _initPos, _smoothTransition * GameController.Instance.levelHeight);
-            transform.rotation = Quaternion.Euler(5, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             if (transform.position.y >= _initPos.y)
             {
                 transform.position = _initPos;
@@ -140,7 +140,7 @@ public class CameraController : Singleton<CameraController>
         else if (_currentState == CameraState.Fixed)
         {
             transform.position = Vector3.MoveTowards(transform.position, _initPos, _resetMoveSpeed * (transform.position.z - _initPos.z));
-            transform.rotation = Quaternion.Euler(5, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         //Debug.Log(_currentState);
     }

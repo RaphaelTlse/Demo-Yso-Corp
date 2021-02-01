@@ -119,7 +119,7 @@ public class GameController : Singleton<GameController>
     {
         if (level == 0)
         {
-            _currentGround = Instantiate(_ground, new Vector3(0, 0, wallDistance / 2), Quaternion.identity);
+            _currentGround = Instantiate(_ground, new Vector3(0, -20, wallDistance / 2), Quaternion.identity);
             _nextGround = Instantiate(_cloud, new Vector3(_cloud.transform.position.x, levelHeight + _cloud.transform.position.y, wallDistance / 2 + _cloud.transform.position.z), Quaternion.identity);
             _nextGround.GetComponent<Renderer>().enabled = false;
             _currentSpawner = Instantiate(_spawner, new Vector3(0, 0, 0), Quaternion.identity);
@@ -132,7 +132,11 @@ public class GameController : Singleton<GameController>
             _currentWall = buildWallAt(level);
             _nextWall = buildWallAt(level + 1);
             for (int i = 0; i < _nextWall.Length; i++)
+            {
                 _nextWall[i].gameObject.GetComponent<Renderer>().enabled = false;
+                //_nextWall[i].gameObject.GetComponent<Rigidbody>().detectCollisions = false;
+                //_nextWall[i].gameObject.GetComponent<Rigidbody>().useGravity = false;
+            }
 
         }
         else if (level < maxLevel)
@@ -146,19 +150,24 @@ public class GameController : Singleton<GameController>
             _currentSocle = _nextSocle;
             _nextSocle.GetComponent<Renderer>().enabled = true;
             _currentSpawner = _nextSpawner;
-            _nextSpawner.GetComponent<Renderer>().enabled = true;
+//            _nextSpawner.GetComponent<Renderer>().enabled = true;
             _currentWall = _nextWall;
             for (int i = 0; i < _nextWall.Length; i++)
-                _nextWall[i].gameObject.GetComponent<Renderer>().enabled = true;
+            {
+                if (_nextWall[i].gameObject != null)
+                    _nextWall[i].gameObject.GetComponent<Renderer>().enabled = true;
+                //_nextWall[i].gameObject.GetComponent<Rigidbody>().detectCollisions = true;
+                //_nextWall[i].gameObject.GetComponent<Rigidbody>().useGravity = true;
+            }
             if (level + 2 < maxLevel)
             {
-                _nextGround = Instantiate(_cloud, new Vector3(_cloud.transform.position.x, (level + 1) * levelHeight + _cloud.transform.position.y, wallDistance / 2 + _cloud.transform.position.z), Quaternion.identity);
+                _nextGround = Instantiate(_cloud, new Vector3(_cloud.transform.position.x, (level + 1) * levelHeight + 0.1f + _cloud.transform.position.y, wallDistance / 2 + _cloud.transform.position.z), Quaternion.identity);
                 _nextGround.GetComponent<Renderer>().enabled = false;
-                _nextSocle = Instantiate(_flyingSocle, new Vector3(0, (level + 1) * levelHeight + 0.1f, wallDistance + (((level + 2) / 2) * 4)), Quaternion.identity);
+                _nextSocle = Instantiate(_flyingSocle, new Vector3(0, (level + 1) * levelHeight - 0.6f, wallDistance + (((level + 2) / 2) * 4)), Quaternion.identity);
             }
             else
             {
-                _nextSocle = Instantiate(_socle, new Vector3(0, (level + 1) * levelHeight + 0.1f, wallDistance + (((level + 2) / 2) * 4)), Quaternion.identity);
+                _nextSocle = Instantiate(_socle, new Vector3(0, (level + 1) * levelHeight, wallDistance + (((level + 2) / 2) * 4)), Quaternion.identity);
             }
            // Debug.Log("walldistance [" + wallDistance + "] + ((level [" + level + "] + 1) / 2) * 5) = el ", ")
             _nextSocle.transform.localScale = new Vector3(_nextSocle.transform.localScale.x + level + 2 - level % 2, _nextSocle.transform.localScale.y, _nextSocle.transform.localScale.z);
@@ -198,7 +207,7 @@ public class GameController : Singleton<GameController>
                 //Debug.Log("Random lol : " + random);
                 if (random + level >= 98 || level == maxLevel - 1)
                     tmp = Instantiate(_goldenBrick, new Vector3(j * 2 - newLineLength + 1 + 0 % 2, level * levelHeight + line + 0.65f, wallDistance + ((level + 1) / 2 * 4)), Quaternion.identity) as GameObject;
-                else if (random == 0)
+                else if (random < 2)
                     tmp = Instantiate(_explosiveBrick, new Vector3(j * 2 - newLineLength + 1, level * levelHeight + line + 0.65f, wallDistance + ((level + 1) / 2 * 4)), Quaternion.identity) as GameObject;
                 else
                 {
@@ -229,7 +238,7 @@ public class GameController : Singleton<GameController>
                     else
                         tmp = Instantiate(_goldenBrick, new Vector3(j * 2 - newLineLength, level * levelHeight + line + 0.65f, wallDistance + ((level + 1) / 2 * 4)), Quaternion.identity) as GameObject;
                 }
-                else if (random == 0)
+                else if (random < 2)
                 {
                     if (j == 0)
                         tmp = Instantiate(_miniExplosiveBrick, new Vector3(j * 2 - newLineLength + 0.5f, level * levelHeight + line + 0.65f, wallDistance + ((level + 1) / 2 * 4)), Quaternion.identity) as GameObject;
